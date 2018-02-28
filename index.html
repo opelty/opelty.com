@@ -1,64 +1,187 @@
 ---
 layout: default
 title: Home
-cover: false
+cover: 'assets/images/home-cover.png'
+big_logo: 'assets/images/logo-small.png'
 about: 'about.html'
 ---
 
-<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
+<header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {% else %}no-cover{% endif %}">
     <nav class="main-nav overlay clearfix">
             {% if page.logo %}
                 <a class="blog-logo" href="{{ site.baseurl }}">
                     <img src="{{ page.logo }}" alt="Blog Logo" />
                 </a>
             {% endif %}
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>
+        <a class="subscribe-button icon-twitter" href="{{ site.baseurl }}feed.xml">Follow Us</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.name }}</h1>
-            <h2 class="page-description">
-                {% if site.description %} {{ site.description }}. {% endif %}
-                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
-            </h2>
+            <img src="{{ page.big_logo }}" alt="Blog Logo" width="512" height="235" />
+            <h1 class="page-description">
+                {% if site.slogan %} {{ site.slogan }}. {% endif %}
+            </h1>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+    <a class="scroll-down icon-arrow-left" href="#sub-header" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
+<main class="content" role="main">
+    <article class="post">
+      <h1>about opelty</h1>
 
-<main id="content" class="content" role="main">
+      Opelty Software Studio makes software developments and screencasts researching for the perfect balance between UX, design and code optimization. We divide Opelty into 3 small studios, explore them!
+      <div class="row">
+        <div class="column text-centered">
+          <article class="post">
+              <header class="post-header">
+                  <img class="img-circle" src="assets/images/osi_symbol.png" width="150" height="150">
+                  <h2 class="post-title">OpenSource Studio</h2>
+              </header>
+              <section class="post-excerpt">
+                Opelty's OpenSource Studio makes open source applications. Those apps are great because the community can help to grow it. Also, all of our developments try to find the perfect balance between design and usability trying to use the best today's development practices. This studio makes totally free applications and publishes those codes on our public GitHub's repository.
+                <br /><br /> <a class="read-more" href="{{ post.url }}">Explore More &raquo;</a>
+              </section>
+              <footer class="post-meta">
+                  <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+
+                  </time>
+              </footer>
+          </article>
+        </div>
+        <div class="column text-centered">
+          <article class="post">
+              <header class="post-header">
+                  <img class="img-circle" src="assets/images/opelty-icon.png" width="150" height="150">
+                  <h2 class="post-title">Commerce Studio</h2>
+              </header>
+              <section class="post-excerpt">
+                Opelty's Commerce Studio makes non-open source applications. If you have any idea about an amazing development, we will be happy to build and make your ideas real. Also, all code generated on this studio is owned by the client, so we won't publish it on our public channels like OpenSource studio or ScreenCasts.
+                <br />Contact us and have your ideas come true! <br /><br /><a class="read-more" href="https://github.com/opelty">Contact Us &raquo;</a>
+              </section>
+              <footer class="post-meta">
+                  <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+
+                  </time>
+              </footer>
+          </article>
+        </div>
+        <div class="column text-centered">
+          <article class="post">
+              <header class="post-header">
+                  <img class="img-circle" src="assets/images/youtube_social_circle_red.png" width="150" height="150">
+                  <h2 class="post-title">ScreenCasts</h2>
+              </header>
+              <section class="post-excerpt">
+                ScreenCast will be the amazing Opelty's YouTube channel where we will make some useful videos about we what do. Explaining and talking about software development our main idea is allowing you learn more about those subjects.
+                <br />Contact us if you are interested in a talk or make a tutorial, we will happy to talk with you and come it real.
+                <br /><br /><a class="read-more" href="#">Comming Soon</a>
+              </section>
+              <footer class="post-meta">
+                  <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+
+                  </time>
+              </footer>
+          </article>
+        </div>
+      </div>
+      <div>
+        <h3 class="page-description" style="color: #222222; text-align: center;">
+            {% if site.slogan %} {{ site.slogan }}. {% endif %}
+        </h3>
+      </div>
+    </article>
+
+    <article class="post">
+        <h1>meet us</h1>
+
+        <section class="post-content">
+          <div class="row">
+            <div class="column text-centered">
+              <div class="about-us-header">
+                <img class="img-circle" src="https://avatars2.githubusercontent.com/u/5218843?s=150&v=4" width="150" height="150">
+                <h3>Santiago Carmona</h3>
+              </div>
+
+              <div class="post-meta bio">
+                Santiago enjoys coding in Swift since 3 years ago, he thinks: "Coding definitely is a pleasure that only a few can feel, sometimes it is very difficult, frustrating and tiring but all these feelings are forgotten when you realized what you have created after building and running your code"
+              </div>
+              <footer class="post-meta">
+                  <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                      Last update: Feb/2018
+                  </time>
+              </footer>
+            </div>
+
+            <div class="column text-centered">
+              <div class="about-us-header">
+                <img class="img-circle" src="https://avatars1.githubusercontent.com/u/1709983?s=150&v=4" width="150" height="150">
+                <h3>Mateo Olaya</h3>
+              </div>
+
+              <div class="post-meta bio">
+                Mateo loves software development and he started with Objective-C as his first programming language 7 years ago. He knows Swift, Objective-C, C/C++ and Ruby.
+              </div>
+              <footer class="post-meta">
+                  <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                      Last update: Feb/2018
+                  </time>
+              </footer>
+            </div>
+
+            <div class="column text-centered">
+              <div class="about-us-header">
+                <img class="img-circle" src="https://avatars1.githubusercontent.com/u/10122028?s=150&v=4" width="150" height="150">
+                <h3>Jose Lopez</h3>
+              </div>
+
+              <div class="post-meta bio">
+                Jose is a computer science engineer who enjoys coding and graphic design (but he is not a designer). He found in iOS a perfect balance between coding and its beautiful result with just a little bit of UI design.
+              </div>
+              <footer class="post-meta">
+                  <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                      Last update: Feb/2018
+                  </time>
+              </footer>
+            </div>
+          </div>
+        </section>
+    </article>
 
 
     <div class="extra-pagination inner">
         {% include pagination.html %}
     </div>
 
-    {% for post in paginator.posts %}
-
     <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        </header>
-        <section class="post-excerpt">
-            {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
-        </section>
-        <footer class="post-meta">
-            {% if site.author %}
-                <img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
-                {{ site.author }}
-            {% endif %}
-            {% if post.categories.size > 0 %} 
-                {{ post.categories | array_to_sentence_string | prepend: 'on ' }} 
-            {% endif %}
-            <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
-                {{ post.date | date_to_string }}
-            </time> 
-        </footer>
+        <h1>latest blog entries</h1>
+
+        {% for post in paginator.posts %}
+
+        <article class="post">
+            <header class="post-header">
+                <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            </header>
+            <section class="post-excerpt">
+                {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
+            </section>
+            <footer class="post-meta">
+                {% if site.author %}
+                    <img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
+                    {{ site.author }}
+                {% endif %}
+                {% if post.categories.size > 0 %}
+                    {{ post.categories | array_to_sentence_string | prepend: 'on ' }}
+                {% endif %}
+                <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
+                    {{ post.date | date_to_string }}
+                </time>
+            </footer>
+        </article>
+
+        {% endfor %}
+
+        {% include pagination.html %}
     </article>
-
-    {% endfor %}
-
-    {% include pagination.html %}
 
 </main>
